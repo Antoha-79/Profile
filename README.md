@@ -1,2 +1,2 @@
 # Profile
-Delegate, ImagePicker, DatePicker, UserDefaults
+Delegate, ImagePicker, DatePicker
