@@ -35,6 +35,40 @@ final class EditProfileVC: UIViewController {
         nameTextField.resignFirstResponder()
     }
     
+    
+    @IBAction func didLongTapView(_: UILongPressGestureRecognizer) {
+        
+        if avatarImageView.image != nil {
+       
+        let alert = UIAlertController(title: "Удаление", message: "Вы хотите удалить фото?", preferredStyle: .alert)
+        
+        let cancelButton  = UIAlertAction(title: "Нет", style: .cancel) { action in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(cancelButton)
+        
+        let removeButton  = UIAlertAction(title: "Да", style: .destructive) { action in
+            self.avatarImageView.image = nil
+        }
+        alert.addAction(removeButton)
+        
+        present(alert, animated: true, completion: nil)
+         
+        } else {
+            let alert = UIAlertController(title: "Ошибка удаления", message: "Нет фотографии!", preferredStyle: .alert)
+            
+            let oklButton  = UIAlertAction(title: "Ok", style: .default) { action in
+                alert.dismiss(animated: true, completion: nil)
+            }
+            alert.addAction(oklButton)
+    
+            present(alert, animated: true, completion: nil)
+        }
+        
+    }
+    
+    
+    
     @IBAction private func saveDidTap() {
         
         if let newName = nameTextField.text,  // запятая - это значит,что сначала проверка одна (на опциональность), потом вторая (на не пусто ли)
