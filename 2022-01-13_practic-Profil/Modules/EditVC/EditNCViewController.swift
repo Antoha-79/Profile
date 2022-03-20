@@ -8,7 +8,7 @@
 import UIKit
 
 protocol EditProfileDelegate {
-    func didSave(prifile: Profile)
+    func didSave(profile: Profile)
 }
 
 class EditNC: UINavigationController {

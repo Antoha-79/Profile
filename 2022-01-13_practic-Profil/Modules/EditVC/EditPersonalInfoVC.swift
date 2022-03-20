@@ -49,12 +49,6 @@ class EditPersonalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         setup()
         
     }
- /*
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-       
-    }
-*/
     
     private func setupBirthdateTextField() {
         let datePicker = UIDatePicker()
@@ -142,15 +136,6 @@ class EditPersonalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
 
     }
-/*
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-
-        if textField == self.genderTextField {
-            self.genderPicker.isHidden = false
-           // textField.endEditing(true)
-        }
-}
-*/
  
  
     @IBAction private func saveDidTap() {

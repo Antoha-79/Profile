@@ -616,6 +616,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gy4-8b-CT5">
                                 <rect key="frame" x="0.0" y="203" width="414" height="295"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.1975827814569536" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="295" id="ycM-4b-Pbi"/>
                                 </constraints>
@@ -625,7 +626,8 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="openGalleryDidTap" destination="47a-LI-USa" eventType="touchDown" id="pf5-Vi-VRc"/>
+                                    <action selector="openGalleryDidTap" destination="47a-LI-USa" eventType="touchUpInside" id="DBv-ge-PdG"/>
+                                    <outletCollection property="gestureRecognizers" destination="MDU-4U-Kgn" appends="YES" id="dzT-WQ-mWe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -660,6 +662,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9a-Lq-V7O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="MDU-4U-Kgn">
+                    <connections>
+                        <action selector="didLongTapView:" destination="47a-LI-USa" id="Eev-Iy-v4x"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4510.144927536232" y="-558.48214285714278"/>
         </scene>
