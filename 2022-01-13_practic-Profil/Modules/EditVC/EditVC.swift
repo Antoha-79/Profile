@@ -24,7 +24,7 @@ class EditVC: UIViewController {
     @IBAction func save(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
         guard let profile = cashedProfile else { return }
-        editDelegate?.didSave(prifile: profile)
+        editDelegate?.didSave(profile: profile)
        // editDelegate?.didSave(personalInfo: profile.personalInfo)
         
     }

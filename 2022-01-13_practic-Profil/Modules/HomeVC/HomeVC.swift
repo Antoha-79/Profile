@@ -49,9 +49,22 @@ class HomeVC: UIViewController {
         // Пол
             genderLabel.text = profile.personalInfo.gender.rawValue
             
-            phoneLabel.text = profile.personalInfo.phone
+        // Телефон
+            if let newPhone = profile.personalInfo.phone,
+               !newPhone.isEmpty {
+                phoneLabel.text = newPhone
+            } else {
+                phoneLabel.text = "Не указан"
+            }
+           
+        // E-mail
+            if let newEmail = profile.personalInfo.email,
+               !newEmail.isEmpty {
+                emailLabel.text = newEmail
+            } else {
+                emailLabel.text = "Не указан"
+            }
             
-            emailLabel.text = profile.personalInfo.email
             
 // Доп.информация
             
@@ -99,8 +112,8 @@ class HomeVC: UIViewController {
 
 extension HomeVC: EditProfileDelegate {
     
-    func didSave(prifile: Profile) {
-        self.profile = prifile
+    func didSave(profile: Profile) {
+        self.profile = profile
     }
     
 }
