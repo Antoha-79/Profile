@@ -37,10 +37,18 @@ class EditAdditionalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerView
 
     private func setup() {
         companyTextField.placeholder = "Укажите компанию, где работаете"
-        companyTextField.text = cachedAdditionalInfo?.company
-        
+            if cachedAdditionalInfo?.company == "Не указана" {
+                companyTextField.text = ""
+            } else {
+                companyTextField.text = cachedAdditionalInfo?.company
+            }
+                
         positionTextField.placeholder = "Укажите должность"
-        positionTextField.text = cachedAdditionalInfo?.position
+            if cachedAdditionalInfo?.position == "Не указана" {
+                positionTextField.text = ""
+            } else {
+                positionTextField.text = cachedAdditionalInfo?.position
+            }
         
         relationshipPicker = UIPickerView()
         relationshipPicker.delegate = self
